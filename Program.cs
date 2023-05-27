@@ -18,8 +18,8 @@ namespace ConsoliParcial3
             });
             
             /*
-            builder.Services.AddDbContext<SupermarketContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDB"))
+            builder.Services.AddDbContext<ParcialContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ParcialContext"))
             );
             */
 
