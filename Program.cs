@@ -1,3 +1,5 @@
+using ConsoliParcial3.Data;
+
 namespace ConsoliParcial3
 {
     public class Program
