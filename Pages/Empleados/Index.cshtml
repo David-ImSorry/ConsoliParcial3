@@ -1,0 +1,46 @@
+﻿@page
+@model ConsoliParcial3.Pages.Empleados.IndexModel
+@{
+    ViewData["Title"] = "IndexEmpleados";
+}
+<h1>Empleados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleados[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleados[0].TipodeServicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleados[0].CorreoCo)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model.Empleados)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.TipodeServicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => empleado.CorreoCo)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@empleado.Id" class="btn btn-warning">Editar</a>
+                    <a asp-page="./Delete" asp-route-id="@empleado.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-page="Create" class="btn btn-success">Ingresar Nuevo Empleado</a>
+</p>

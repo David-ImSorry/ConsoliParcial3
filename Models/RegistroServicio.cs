@@ -4,6 +4,7 @@ namespace ConsoliParcial3.Models
 {
     public class RegistroServicio
     {
+        [Key]
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         [Display(Name = "Cliente")]
