@@ -1,4 +1,28 @@
 ﻿@page
-@model ConsoliParcial3.Pages.ConsultasRe.IndexModel
+@model ConsoliParcial3.Pages.ConsultasRe.ConsultaModel
 @{
+    ViewData["Title"] = "Consulta";
 }
+
+<h1>Consulta de Citas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Nombre Paciente</th>
+            <th>Nombre Médico</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var servicio in Model.Citas)
+        {
+            <tr>
+                <td>@servicio.Fecha</td>
+                <td>@servicio.Cliente</td>
+                <td>@servicio.Empleado</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

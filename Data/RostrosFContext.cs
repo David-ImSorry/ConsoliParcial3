@@ -10,6 +10,9 @@ namespace ConsoliParcial3.Data
         }
 
         public DbSet<User> Users { get; set; }
-        
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Empleado> Empleado { get; set; }
+        public DbSet<RegistroServicio> RegistroServicio { get; set; }
+
     }
 }

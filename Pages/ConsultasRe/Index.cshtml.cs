@@ -2,6 +2,7 @@ using ConsoliParcial3.Data;
 using ConsoliParcial3.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConsoliParcial3.Pages.ConsultasRe
 {
@@ -15,17 +16,18 @@ namespace ConsoliParcial3.Pages.ConsultasRe
         }
 
         public List<ServicioRealizado> Citas { get; set; }
-
+        
         public async Task<IActionResult> OnGetAsync()
+        
         {
-            Citas = await _context.RegistroCita
-                .Include(_dbContext => rc.Cliente)
-                .Include(_dbContext => rc.Empleado)
+            Citas = await _context.RegistroServicio
+                .Include(_dbContext => _dbContext.Cliente)
+                .Include(_dbContext => _dbContext.Empleado)
                 .Select(_dbContext => new ServicioRealizado
                 {
                     Fecha = _dbContext.Fecha,
-                    Cliente = _dbContext.Cliente.Nombre_Completo,
-                    Empleado = _dbContext.Empleado.Nombre_Completo
+                    Cliente = _dbContext.Cliente.Nombre,
+                    Empleado = _dbContext.Empleado.Nombre
                 })
                 .ToListAsync();
 
