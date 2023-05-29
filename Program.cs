@@ -1,4 +1,5 @@
 using ConsoliParcial3.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConsoliParcial3
 {
@@ -17,11 +18,10 @@ namespace ConsoliParcial3
                 options.LoginPath = "/Account/Login";
             });
             
-            /*
-            builder.Services.AddDbContext<ParcialContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("ParcialContext"))
+            
+            builder.Services.AddDbContext<RostrosFContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("RostrosFContext"))
             );
-            */
 
             var app = builder.Build();
 
